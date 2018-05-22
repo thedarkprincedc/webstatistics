@@ -1,0 +1,57 @@
+<mvc:View
+    controllerName="com.dla.webstat.controller.WebcontentOdata"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>homePageTitle}"
+    showNavButton="true"
+     navButtonPress="onNavBack">
+        <headerContent>
+            <Button
+                icon="sap-icon://hello-world"/>
+        </headerContent>
+        <content>
+         <Table
+            id="tabledata"
+            items="{ path: 'webcontent>/webcontent_stat_weekly' }">
+           	<columns>
+                <Column width="12em">
+                    <Text text="Time Stamp" />
+                </Column>
+                 <Column width="12em">
+                    <Text text="Agg. Level" />
+                </Column>
+                <Column width="12em">
+                    <Text text="Content" />
+                </Column>
+    
+                    <Column width="12em">
+                    <Text text="Object Type" />
+                </Column>
+                 <Column width="12em">
+                    <Text text="Visits" />
+                </Column>
+                <Column width="12em">
+                    <Text text="Custom" />
+                </Column>
+                 <Column width="12em">
+                    <Text text="Id" />
+                </Column>
+            </columns>
+            <items>
+					<ColumnListItem>
+                    	<cells>
+                            <Text text="{webcontent>timestamphour}"/>
+                            <Text text="{webcontent>aggregationlevel}"/>
+                            <Text text="{webcontent>content}"/>
+                            <Text text="{webcontent>objecttype}"/>
+                            <Text text="{webcontent>visits}"/>
+                            <Text text="{webcontent>custom}"/>
+                            <Text text="{webcontent>id}"/>
+
+                        </cells>
+                    </ColumnListItem>
+            </items>
+        </Table>
+        </content>
+    </Page>
+</mvc:View>

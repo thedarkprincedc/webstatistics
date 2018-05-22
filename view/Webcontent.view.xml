@@ -1,0 +1,67 @@
+<mvc:View
+    controllerName="com.dla.webstat.controller.Webcontent"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>homePageTitle}">
+        <headerContent>
+            <Button
+                icon="sap-icon://hello-world"/>
+        </headerContent>
+        <content>
+         <mvc:XMLView viewName="com.dla.webstat.view.NavToolbar"/>
+         <Table id="tabledata" items="{ path: '/' }">
+           	<columns>
+                <Column width="12em">
+                    <Text text="Time Stamp" />
+                </Column>
+                 <Column width="12em">
+                    <Text text="Agg. Level" />
+                </Column>
+                <Column width="12em">
+                    <Text text="Content" />
+                </Column>
+    
+                    <Column width="12em">
+                    <Text text="Object Type" />
+                </Column>
+                 <Column width="12em">
+                    <Text text="Visits" />
+                </Column>
+                <Column width="12em">
+                    <Text text="Custom" />
+                </Column>
+                 <Column width="12em">
+                    <Text text="Id" />
+                </Column>
+            </columns>
+            <items>
+					<ColumnListItem>
+                    	<cells>
+							<ObjectIdentifier 
+                        
+                                text="{timestamphour}" />
+                            <ObjectIdentifier 
+                            
+                                text="{aggregationlevel}" />
+                            <ObjectIdentifier 
+                             
+                                text="{content}" />
+                           
+                                <ObjectIdentifier 
+                           
+                                text="{objecttype}" />
+                            <ObjectIdentifier 
+                           
+                                text="{visits}" />
+                            <ObjectIdentifier 
+                
+                                text="{custom}" />
+                            <ObjectIdentifier 
+                                text="{id}" />
+                        </cells>
+                    </ColumnListItem>
+            </items>
+        </Table>
+        </content>
+    </Page>
+</mvc:View>

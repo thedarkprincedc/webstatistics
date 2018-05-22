@@ -1,0 +1,79 @@
+{
+    "_version": "1.8.0",
+    "sap.app" : {
+        "id" : "com.dla.webstat",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+            "webcontentRemote": {
+                "uri": "http://services.odata.org/V2/WebContentStatistics/WebContentStatistics.svc/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui5":{
+        "rootView": {
+            "viewName": "com.dla.webstat.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.30",
+            "libs": {
+                "sap.m": {}
+            }
+        },
+        "models":{
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.dla.webstat.i18n.i18n"
+                }
+            },
+            "webcontent":{
+                "dataSource": "webcontentRemote"
+            }
+        },
+        "routing":{
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "com.dla.webstat.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "webcontent",
+                    "target": "webcontent"
+                },
+                {
+                    "pattern": "webcontentodata/{interval}",
+                    "name": "webcontentodata",
+                    "target": "webcontentodata"
+                }
+            ],
+            "targets": {
+                "webcontent": {
+                    "viewID": "webcontent",
+                    "viewName": "Webcontent"
+                },
+                "webcontentodata": {
+                    "viewID": "webcontentodata",
+                    "viewName": "Webcontentodata"
+                }
+            }
+        }
+    }
+}

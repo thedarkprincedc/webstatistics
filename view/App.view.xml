@@ -1,0 +1,7 @@
+<mvc:View
+    controllerName="com.dla.webstat.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true">
+    <App class="webStatApp" id="app"/>
+</mvc:View>

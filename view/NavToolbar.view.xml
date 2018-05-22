@@ -1,0 +1,46 @@
+<mvc:View 
+    controllerName="com.dla.webstat.controller.NavToolbar" 
+    xmlns="sap.m" 
+    xmlns:mvc="sap.ui.core.mvc">
+    <Panel 
+       
+        class="sapUiResponsiveMargin" 
+        width="auto"
+        expandable="{device>/system/phone}"
+        expanded="{= !${device>/system/phone} }">
+        <content>
+            <Button 
+                icon="sap-icon://world"
+                text="Daily"
+                press="onOpenDaily"
+                class="sapUiSmallMarginEnd sapUiVisbleOnlyOnDesktop"/>
+             <Button 
+                icon="sap-icon://world"
+                text="Weekly"
+                press="onOpenWeekly"
+                class="sapUiSmallMarginEnd sapUiVisbleOnlyOnDesktop"/>
+             <Button 
+                icon="sap-icon://world"
+                text="Monthly"
+                press="onOpenMonthly"
+                class="sapUiSmallMarginEnd sapUiVisbleOnlyOnDesktop"/>
+         <!-- headerText="{i18n>helloPanelTitle}"  -->
+            <!-- <Button 
+                icon="sap-icon://world"
+                text="{i18n>openDialogButtonText}"
+                press="onOpenDialog"
+                class="sapUiSmallMarginEnd sapUiVisbleOnlyOnDesktop"/>
+            <Button 
+                text="{i18n>showHelloButtonText}" 
+                press="onShowHello" 
+                class="myCustomButton" />
+            <Input 
+                value="{/recipient/name}" 
+                valueLiveUpdate="true" 
+                width="60%"/>
+            <FormattedText 
+            htmlText="Hello {/recipient/name}" 
+            class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText" /> -->
+        </content>
+    </Panel>
+</mvc:View>
