@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -20,6 +20,7 @@ sap.ui.define(['./ContextBinding'],
 	 * @param {string} sPath Binding path to be used for this binding, syntax depends on the concrete subclass
 	 * @param {sap.ui.model.Context} oContext Binding context relative to which a relative binding path will be resolved
 	 * @param {object} [mParameters] Map of optional parameters as defined by subclasses; this class does not introduce any own parameters
+	 * @param {object} [oEvents] Object defining event handlers
 	 *
 	 * @class
 	 * The ContextBinding is a specific binding for setting a context for the model.

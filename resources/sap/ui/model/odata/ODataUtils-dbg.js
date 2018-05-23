@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -13,8 +13,8 @@
  */
 
 // Provides class sap.ui.model.odata.ODataUtils
-sap.ui.define(['jquery.sap.global', './Filter', 'sap/ui/model/Sorter', 'sap/ui/core/format/DateFormat'],
-	function(jQuery, ODataFilter, Sorter, DateFormat) {
+sap.ui.define(['jquery.sap.global', './Filter', 'sap/ui/model/Sorter', 'sap/ui/model/Filter', 'sap/ui/core/format/DateFormat'],
+	function(jQuery, ODataFilter, Sorter, Filter, DateFormat) {
 	"use strict";
 
 	var rDecimal = /^([-+]?)0*(\d+)(\.\d+|)$/,

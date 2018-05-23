@@ -13,7 +13,6 @@
 	enabled: true, // boolean
 	height: "", // sap.ui.core.CSSSize
 	design: sap.m.ToolbarDesign.Auto, // sap.m.ToolbarDesign, since 1.16.8
-	style: sap.m.ToolbarStyle.Standard, // sap.m.ToolbarStyle, since 1.54
 	showPopover: true, // boolean
 	upperCase: false, // boolean
 	tooltip: undefined, // sap.ui.core.TooltipBase
@@ -42,7 +41,6 @@
 	enabled="true"
 	height=""
 	design="Auto"
-	style="Standard"
 	showPopover="true"
 	upperCase="false"
 	ariaLabelledBy=""
@@ -267,7 +265,6 @@
 	visible: true, // boolean
 	fieldGroupIds: [], // string[], since 1.31
 	primaryArea: sap.f.DynamicPageTitleArea.Begin, // sap.f.DynamicPageTitleArea, since 1.50
-	areaShrinkRatio: "1:1.6:1.6", // sap.f.DynamicPageTitleShrinkRatio, since 1.54
 	tooltip: undefined, // sap.ui.core.TooltipBase
 	customData: [], // sap.ui.core.CustomData
 	dependents: [], // sap.ui.core.Element, since 1.19
@@ -282,10 +279,7 @@
 	breadcrumbs: undefined, // sap.m.IBreadcrumbs, since 1.52
 	validateFieldGroup: [function (oEvent) {
 		var ${control} = oEvent.getSource();
-	}, this],
-	stateChange: [function (oEvent) {
-		var ${control} = oEvent.getSource();
-	}, this] // since 1.54
+	}, this]
 })
 ]]></jsTemplate>
 	<xmlTemplate><![CDATA[<ObjectPageDynamicHeaderTitle xmlns="sap.uxap"
@@ -296,9 +290,7 @@
 	visible="true"
 	fieldGroupIds=""
 	primaryArea="Begin"
-	areaShrinkRatio="1:1.6:1.6"
-	validateFieldGroup=""
-	stateChange="">
+	validateFieldGroup="">
 		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
 		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
 		<heading></heading> <!-- sap.ui.core.Control -->

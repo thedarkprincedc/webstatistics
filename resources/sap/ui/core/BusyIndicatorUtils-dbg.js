@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global'], //require of sap/ui/core/library not possib
 	 * Returns the HTML content for the busy indicator
 	 * styling + animation: LocalBusyIndicator.less
 	 *
-	 * @param {string} sSize either "Large" or "Medium". Other sizes will be mapped to "Medium"
+	 * @param {String} sSize either "Large" or "Medium". Other sizes will be mapped to "Medium"
 	 * @returns {DOM.element} the element for the busy indicator
 	 */
 	BusyIndicatorUtils.getElement = function(sSize) {

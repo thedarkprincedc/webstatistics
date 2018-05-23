@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -26,7 +26,7 @@ sap.ui.define([
 	 * @class The Remove allows trigger remove operations on the overlay
 	 * @extends sap.ui.rta.plugin.Plugin
 	 * @author SAP SE
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 * @constructor
 	 * @private
 	 * @since 1.34
@@ -66,7 +66,12 @@ sap.ui.define([
 	 */
 	Remove.prototype._isEditable = function(oOverlay) {
 		var bEditable = false;
-		var oElement = oOverlay.getElement();
+		var oElement = oOverlay.getElementInstance();
+
+		var oParentDesignTimeMetadata = Utils.getRelevantContainerDesigntimeMetadata(oOverlay);
+		if (!oParentDesignTimeMetadata) {
+			return false;
+		}
 
 		var oRemoveAction = this.getAction(oOverlay);
 		if (oRemoveAction && oRemoveAction.changeType) {
@@ -99,7 +104,7 @@ sap.ui.define([
 
 		if (typeof oAction.isEnabled !== "undefined") {
 			if (typeof oAction.isEnabled === "function") {
-				bIsEnabled = oAction.isEnabled(oOverlay.getElement());
+				bIsEnabled = oAction.isEnabled(oOverlay.getElementInstance());
 			} else {
 				bIsEnabled = oAction.isEnabled;
 			}
@@ -118,7 +123,7 @@ sap.ui.define([
 	 * @private
 	 */
 	Remove.prototype._canBeRemovedFromAggregation = function(oOverlay){
-		var oElement = oOverlay.getElement();
+		var oElement = oOverlay.getElementInstance();
 		var oParent = oElement.getParent();
 		if (!oParent){
 			return false;
@@ -148,7 +153,7 @@ sap.ui.define([
 	Remove.prototype._getConfirmationText = function(oOverlay) {
 		var oAction = this.getAction(oOverlay);
 		if (oAction && oAction.getConfirmationText) {
-			return oAction.getConfirmationText(oOverlay.getElement());
+			return oAction.getConfirmationText(oOverlay.getElementInstance());
 		}
 	};
 
@@ -188,7 +193,8 @@ sap.ui.define([
 		if (aOverlays){
 			aSelection = aOverlays;
 		} else {
-			aSelection = this.getSelectedOverlays();
+			var oDesignTime = this.getDesignTime();
+			aSelection = oDesignTime.getSelection();
 		}
 
 		aSelection = aSelection.filter(this.isEnabled, this);
@@ -227,7 +233,7 @@ sap.ui.define([
 		aSelectedOverlays
 			.forEach(function(oOverlay) {
 				var oCommand;
-				var oRemovedElement = oOverlay.getElement();
+				var oRemovedElement = oOverlay.getElementInstance();
 				var oDesignTimeMetadata = oOverlay.getDesignTimeMetadata();
 				var oRemoveAction = this.getAction(oOverlay);
 				var sVariantManagementReference = this.getVariantManagementReference(oOverlay, oRemoveAction);
@@ -278,7 +284,7 @@ sap.ui.define([
 					);
 				}
 				oNextOverlaySelection = aCandidates.filter(function (oSibling) {
-					return oSibling.getElement().getVisible();
+					return oSibling.getElementInstance().getVisible();
 				}).shift();
 			}
 		}
@@ -294,7 +300,7 @@ sap.ui.define([
 	 * @return {object[]}          Returns array containing the items with required data
 	 */
 	Remove.prototype.getMenuItems = function(oOverlay){
-		return this._getMenuItems(oOverlay, {pluginId : "CTX_REMOVE", rank : 60, icon : "sap-icon://hide"});
+		return this._getMenuItems(oOverlay, {pluginId : "CTX_REMOVE", rank : 60});
 	};
 
 	/**

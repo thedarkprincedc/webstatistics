@@ -1,34 +1,13 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
 // Provides control sap.m.DateTimeInput.
-sap.ui.define([
-	'jquery.sap.global',
-	'sap/ui/core/Control',
-	'./library',
-	'sap/ui/model/type/Date',
-	'sap/ui/model/type/Time',
-	'sap/ui/model/type/DateTime',
-	'sap/ui/model/odata/type/ODataType',
-	'sap/ui/core/library',
-	'sap/ui/Device',
-	'./DateTimeInputRenderer'
-],
-function(
-	jQuery,
-	Control,
-	library,
-	Date1,
-	Time,
-	DateTime,
-	ODataType,
-	coreLibrary,
-	Device,
-	DateTimeInputRenderer
-	) {
+sap.ui.define(['jquery.sap.global', 'sap/ui/core/Control', './library', 'sap/ui/model/type/Date', 'sap/ui/model/type/Time',
+	'sap/ui/model/type/DateTime', 'sap/ui/model/odata/type/ODataType', 'sap/ui/core/library', 'sap/ui/Device'],
+	function(jQuery, Control, library, Date1, Time, DateTime, ODataType, coreLibrary, Device) {
 	"use strict";
 
 	// shortcut for sap.m.DateTimeInputType
@@ -56,19 +35,18 @@ function(
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 *
 	 * @constructor
 	 * @public
 	 * @since 1.9.1
-	 * @deprecated as of version 1.32.8, replaced by {@link sap.m.DatePicker}, {@link sap.m.TimePicker} or {@link sap.m.DateTimePicker}
+	 * @deprecated Since version 1.32.8. Instead, use the dedicated <code>sap.m.DatePicker</code>, <code>sap.m.TimePicker</code> or <code>sap.m.DateTimePicker</code> controls.
 	 * @alias sap.m.DateTimeInput
 	 * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
 	 */
 	var DateTimeInput = Control.extend("sap.m.DateTimeInput", /** @lends sap.m.DateTimeInput.prototype */ { metadata : {
 
 		library : "sap.m",
-		designtime: "sap/m/designtime/DateTimeInput.designtime",
 		properties : {
 
 			/**

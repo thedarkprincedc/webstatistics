@@ -1,32 +1,12 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
 // Provides control sap.m.Carousel.
-sap.ui.define([
-	'jquery.sap.global',
-	'./library',
-	'sap/ui/core/Control',
-	'sap/ui/Device',
-	'sap/ui/core/ResizeHandler',
-	'sap/ui/core/library',
-	'./CarouselRenderer',
-	'sap/ui/thirdparty/mobify-carousel',
-	'sap/ui/core/IconPool',
-	'jquery.sap.keycodes'
-],
-function(
-	jQuery,
-	library,
-	Control,
-	Device,
-	ResizeHandler,
-	coreLibrary,
-	CarouselRenderer
-	/*, mobifycarousel, IconPool (indirect dependency, kept for compatibility with tests, to be fixed in ImageHelper) */
-) {
+sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/Device', 'sap/ui/core/ResizeHandler', 'sap/ui/core/library', 'sap/ui/thirdparty/mobify-carousel', 'sap/ui/core/IconPool', 'jquery.sap.keycodes'],
+	function(jQuery, library, Control,  Device, ResizeHandler, coreLibrary /*, mobifycarousel, IconPool (indirect dependency, kept for compatibility with tests, to be fixed in ImageHelper) */) {
 	"use strict";
 
 	//shortcut for sap.ui.core.BusyIndicatorSize
@@ -89,7 +69,7 @@ function(
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 *
 	 * @constructor
 	 * @public
@@ -99,7 +79,6 @@ function(
 	var Carousel = Control.extend("sap.m.Carousel", /** @lends sap.m.Carousel.prototype */ { metadata : {
 
 		library : "sap.m",
-		designtime: "sap/m/designtime/Carousel.designtime",
 		properties : {
 
 			/**

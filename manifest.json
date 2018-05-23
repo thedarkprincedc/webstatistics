@@ -55,8 +55,13 @@
             "routes": [
                 {
                     "pattern": "",
-                    "name": "webcontent",
-                    "target": "webcontent"
+                    "name": "start",
+                    "target": "start"
+                },
+                {
+                    "pattern": "chart",
+                    "name": "chart",
+                    "target": "chart"
                 },
                 {
                     "pattern": "webcontentodata/{interval}",
@@ -65,9 +70,13 @@
                 }
             ],
             "targets": {
-                "webcontent": {
-                    "viewID": "webcontent",
-                    "viewName": "Webcontent"
+                "start": {
+                    "viewID": "start",
+                    "viewName": "Start"
+                },
+                "chart": {
+                    "viewID": "chart",
+                    "viewName": "Chart"
                 },
                 "webcontentodata": {
                     "viewID": "webcontentodata",

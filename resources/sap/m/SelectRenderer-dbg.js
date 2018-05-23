@@ -1,11 +1,11 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
-sap.ui.define(['sap/ui/core/Renderer', 'sap/ui/core/IconPool', 'sap/m/library', 'sap/ui/Device', 'sap/ui/core/InvisibleText', 'sap/ui/core/library'],
-	function(Renderer, IconPool, library, Device, InvisibleText, coreLibrary) {
+sap.ui.define(['sap/ui/core/Renderer', 'sap/ui/core/ValueStateSupport', 'sap/ui/core/IconPool', 'sap/m/library', 'sap/ui/Device', 'sap/ui/core/library'],
+	function(Renderer, ValueStateSupport, IconPool, library, Device, coreLibrary) {
 		"use strict";
 
 		// shortcut for sap.ui.core.TextDirection
@@ -37,7 +37,7 @@ sap.ui.define(['sap/ui/core/Renderer', 'sap/ui/core/IconPool', 'sap/m/library', 
 		 * @param {sap.m.Select} oSelect An object representation of the control that should be rendered.
 		 */
 		SelectRenderer.render = function(oRm, oSelect) {
-			var	sTooltip = oSelect.getTooltip_AsString(),
+			var	sTooltip = ValueStateSupport.enrichTooltip(oSelect, oSelect.getTooltip_AsString()),
 				sType = oSelect.getType(),
 				bAutoAdjustWidth = oSelect.getAutoAdjustWidth(),
 				bEnabled = oSelect.getEnabled(),
@@ -168,8 +168,7 @@ sap.ui.define(['sap/ui/core/Renderer', 'sap/ui/core/IconPool', 'sap/m/library', 
 			oRm.write(">");
 
 			// write the text of the selected item only if it has not been removed or destroyed
-			// and when the Select isn't in IconOnly mode - BCP 1780431688
-			oRm.writeEscaped((oSelectedItem && oSelectedItem.getParent() && oSelect.getType() !== SelectType.IconOnly) ? oSelectedItem.getText() : "");
+			oRm.writeEscaped((oSelectedItem && oSelectedItem.getParent()) ? oSelectedItem.getText() : "");
 
 			oRm.write("</label>");
 		};
@@ -304,27 +303,6 @@ sap.ui.define(['sap/ui/core/Renderer', 'sap/ui/core/IconPool', 'sap/m/library', 
 		};
 
 		/**
-		 * Returns the id of the InvisibleText containing information about the value state of the Select
-		 * @param oSelect
-		 * @returns {string}
-		 * @private
-		 */
-		SelectRenderer._getValueStateString = function(oSelect) {
-			var sCoreLib = "sap.ui.core";
-
-			switch (oSelect.getValueState()) {
-				case ValueState.Success:
-					return InvisibleText.getStaticId(sCoreLib, "VALUE_STATE_SUCCESS");
-				case ValueState.Warning:
-					return InvisibleText.getStaticId(sCoreLib, "VALUE_STATE_WARNING");
-				case ValueState.Error:
-					return InvisibleText.getStaticId(sCoreLib, "VALUE_STATE_ERROR");
-			}
-
-			return "";
-		};
-
-		/**
 		 * Writes the accessibility state.
 		 * To be overwritten by subclasses.
 		 *
@@ -332,18 +310,12 @@ sap.ui.define(['sap/ui/core/Renderer', 'sap/ui/core/IconPool', 'sap/m/library', 
 		 * @param {sap.ui.core.Control} oSelect An object representation of the control that should be rendered.
 		 */
 		SelectRenderer.writeAccessibilityState = function(oRm, oSelect) {
-			var sValueState = this._getValueStateString(oSelect);
-
-			if (sValueState) {
-				sValueState = " " + sValueState;
-			}
-
 			oRm.writeAccessibilityState(oSelect, {
 				role: this.getAriaRole(oSelect),
 				expanded: oSelect.isOpen(),
 				invalid: (oSelect.getValueState() === ValueState.Error) ? true : undefined,
 				labelledby: {
-					value: oSelect.getId() + "-label" + sValueState,
+					value: oSelect.getId() + "-label",
 					append: true
 				},
 				haspopup: (oSelect.getType() === SelectType.IconOnly) ? true : undefined

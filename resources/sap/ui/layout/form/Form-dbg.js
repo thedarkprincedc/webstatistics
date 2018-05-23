@@ -1,12 +1,12 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
 // Provides control sap.ui.layout.form.Form.
-sap.ui.define(['sap/ui/core/Control', 'sap/ui/layout/library', './FormRenderer'],
-	function(Control, library, FormRenderer) {
+sap.ui.define(['sap/ui/core/Control', 'sap/ui/layout/library'],
+	function(Control, library) {
 	"use strict";
 
 	/**
@@ -40,7 +40,7 @@ sap.ui.define(['sap/ui/core/Control', 'sap/ui/layout/library', './FormRenderer']
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 *
 	 * @constructor
 	 * @public
@@ -61,6 +61,8 @@ sap.ui.define(['sap/ui/core/Control', 'sap/ui/layout/library', './FormRenderer']
 			/**
 			 * Applies a device-specific and theme-specific line height and label alignment to the form rows if the form has editable content.
 			 * If set, all (not only the editable) rows of the form will get the line height of editable fields.
+			 *
+			 * The accessibility <code>aria-readonly</code> attribute is set according to this property.
 			 *
 			 * <b>Note:</b> The setting of the property has no influence on the editable functionality of the form's content.
 			 * @since 1.20.0
@@ -108,7 +110,7 @@ sap.ui.define(['sap/ui/core/Control', 'sap/ui/layout/library', './FormRenderer']
 			 */
 			ariaLabelledBy: { type: "sap.ui.core.Control", multiple: true, singularName: "ariaLabelledBy" }
 		},
-		designtime: "sap/ui/layout/designtime/form/Form.designtime"
+		designTime : true
 	}});
 
 	Form.prototype.toggleContainerExpanded = function(oContainer){

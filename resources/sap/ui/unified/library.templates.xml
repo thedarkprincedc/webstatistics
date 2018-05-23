@@ -197,7 +197,6 @@
 	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize
 	visible: true, // boolean
 	fieldGroupIds: [], // string[], since 1.31
-	standardItems: [], // string[], since 1.54
 	columnWidth: "120px", // sap.ui.core.CSSSize
 	tooltip: undefined, // sap.ui.core.TooltipBase
 	customData: [], // sap.ui.core.CustomData
@@ -215,7 +214,6 @@
 	busyIndicatorSize="Medium"
 	visible="true"
 	fieldGroupIds=""
-	standardItems=""
 	columnWidth="120px"
 	validateFieldGroup="">
 		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
@@ -547,7 +545,6 @@
 	visible: true, // boolean
 	fieldGroupIds: [], // string[], since 1.31
 	value: 0, // float
-	stringValue: undefined, // string, since 1.54
 	currency: undefined, // string
 	maxPrecision: 3, // int
 	useSymbol: true, // boolean
@@ -567,7 +564,6 @@
 	visible="true"
 	fieldGroupIds=""
 	value="0"
-	stringValue=""
 	currency=""
 	maxPrecision="3"
 	useSymbol="true"

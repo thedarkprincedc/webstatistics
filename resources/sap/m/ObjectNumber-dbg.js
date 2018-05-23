@@ -1,18 +1,12 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
 // Provides control sap.m.ObjectNumber.
-sap.ui.define([
-	'./library',
-	'sap/ui/core/Control',
-	'sap/ui/core/Renderer',
-	'sap/ui/core/library',
-	'./ObjectNumberRenderer'
-],
-	function(library, Control, Renderer, coreLibrary, ObjectNumberRenderer) {
+sap.ui.define(['./library', 'sap/ui/core/Control', 'sap/ui/core/Renderer', 'sap/ui/core/library'],
+	function(library, Control, Renderer, coreLibrary) {
 	"use strict";
 
 
@@ -37,7 +31,7 @@ sap.ui.define([
 	 * colors to provide additional meaning about the object to the user.
 	 * @extends sap.ui.core.Control
 	 * @implements sap.ui.core.IFormContent
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 *
 	 * @constructor
 	 * @public
@@ -49,7 +43,6 @@ sap.ui.define([
 
 		interfaces : ["sap.ui.core.IFormContent"],
 		library : "sap.m",
-		designtime: "sap/m/designtime/ObjectNumber.designtime",
 		properties : {
 
 			/**
@@ -59,7 +52,9 @@ sap.ui.define([
 
 			/**
 			 * Defines the number units qualifier.
-			 * @deprecated as of version 1.16.1, replaced by <code>unit</code> property
+			 * @deprecated Since version 1.16.1.
+			 *
+			 * Replaced by unit property due to the number before unit is redundant.
 			 */
 			numberUnit : {type : "string", group : "Misc", defaultValue : null, deprecated: true},
 

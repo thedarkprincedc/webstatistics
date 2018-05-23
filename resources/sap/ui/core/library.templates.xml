@@ -19,7 +19,6 @@
 	lifecycle: sap.ui.core.ComponentLifecycle.Legacy, // sap.ui.core.ComponentLifecycle
 	autoPrefixId: false, // boolean
 	usage: undefined, // string
-	manifest: undefined, // any
 	tooltip: undefined, // sap.ui.core.TooltipBase
 	customData: [], // sap.ui.core.CustomData
 	dependents: [], // sap.ui.core.Element, since 1.19
@@ -50,7 +49,6 @@
 	lifecycle="Legacy"
 	autoPrefixId="false"
 	usage=""
-	manifest=""
 	component=""
 	validateFieldGroup=""
 	componentCreated="">

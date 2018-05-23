@@ -1,0 +1,67 @@
+<mvc:View
+	controllerName="com.dla.webstat.controller.Start"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<Page title="{i18n>appTitle} - Start">
+		<layout:VerticalLayout class="sapUiResponsiveMargin">
+			<Title
+				titleStyle="H2"
+				text="{i18n>appTitle}"
+				class="sapUiTinyMarginBegin" />
+			<layout:HorizontalLayout allowWrapping="true">
+             <GenericTile
+					class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+					header="Daily"
+					subheader="Metrics"
+                    press="onNavToDailyMetrics">
+					<tileContent>
+						<TileContent footer="Updated {/daily/lastUpdated}">
+							<content>
+						        <NumericContent
+									value="{/daily/hits}"
+									icon="{= ${/daily/difference > 0} ? 'sap-icon://navigation-up-arrow' : 'sap-icon://navigation-down-arrow'  }" />
+                             
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+                <GenericTile
+					class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+					header="Weekly"
+					subheader="Metrics"
+                    press="onNavToWeeklyMetrics">
+					<tileContent>
+						<TileContent footer="Updated {/weekly/lastUpdated}">
+							<content>
+						        <NumericContent
+									value="{/weekly/hits}"
+									icon="sap-icon://navigation-up-arrow" />
+                             
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+                <GenericTile
+					class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+					header="Monthly"
+					subheader="Metrics"
+                    press="onNavToMonthlyMetrics">
+					<tileContent>
+						<TileContent footer="Updated {/monthly/lastUpdated}">
+							<content>
+						        <NumericContent
+									value="{/monthly/hits}"
+									icon="sap-icon://navigation-up-arrow" />
+                             
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				 
+			</layout:HorizontalLayout>
+		</layout:VerticalLayout>
+	</Page>
+</mvc:View>

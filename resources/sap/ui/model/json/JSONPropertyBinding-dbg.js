@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -11,7 +11,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/model/ChangeReason', 'sap/ui/model/C
 
 
 	/**
-	 * Creates a new JSONListBinding.
+	 * Creates a new JSONPropertyBinding.
 	 *
 	 * This constructor should only be called by subclasses or model implementations, not by application or control code.
 	 * Such code should use {@link sap.ui.model.json.JSONModel#bindProperty JSONModel#bindProperty} on the corresponding model instance instead.

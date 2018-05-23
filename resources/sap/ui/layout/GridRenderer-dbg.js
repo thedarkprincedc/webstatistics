@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 sap.ui.define(["sap/ui/Device", "sap/ui/layout/library"],
@@ -15,7 +15,7 @@ sap.ui.define(["sap/ui/Device", "sap/ui/layout/library"],
 	/**
 	 * @author SAP SE
 	 * @version
-	 * 1.54.4
+	 * 1.52.7
 	 * @namespace
 	 */
 	var GridRenderer = {};
@@ -125,10 +125,6 @@ sap.ui.define(["sap/ui/Device", "sap/ui/layout/library"],
 			oRm.write("<div");
 			var oLay = oControl._getLayoutDataForControl(aItems[i]);
 			var bCellSpanXLChanged = false;
-
-			if (!aItems[i].getVisible()) {
-				oRm.addClass("sapUiRespGridSpanInvisible");
-			}
 
 			if (oLay) {
 
@@ -302,24 +298,31 @@ sap.ui.define(["sap/ui/Device", "sap/ui/layout/library"],
 				}
 
 
+
+
 				// Visibility
+				var
+				l = oLay.getVisibleL(),
+				m = oLay.getVisibleM(),
+				s = oLay.getVisibleS();
 
-				if (!oLay.getVisibleXL()) {
-					oRm.addClass("sapUiRespGridHiddenXL");
-				}
+				// TODO: visibility of XL different to L
 
-				if (!oLay.getVisibleL()) {
+				if (!l && m && s) {
 					oRm.addClass("sapUiRespGridHiddenL");
-				}
-
-				if (!oLay.getVisibleM()) {
+					oRm.addClass("sapUiRespGridHiddenXL");
+				} else if (!l && !m && s) {
+					oRm.addClass("sapUiRespGridVisibleS");
+				} else if (l && !m && !s) {
+					oRm.addClass("sapUiRespGridVisibleL");
+					oRm.addClass("sapUiRespGridVisibleXL");
+				} else if (!l && m && !s) {
+					oRm.addClass("sapUiRespGridVisibleM");
+				} else if (l && !m && s) {
 					oRm.addClass("sapUiRespGridHiddenM");
-				}
-
-				if (!oLay.getVisibleS()) {
+				} else if (l && m && !s) {
 					oRm.addClass("sapUiRespGridHiddenS");
 				}
-
 
 				// Move - moveBackwards shifts a grid element to the left in LTR mode and
 				// opposite in RTL mode

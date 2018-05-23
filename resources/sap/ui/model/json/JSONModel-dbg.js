@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -34,7 +34,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/model/ClientModel', 'sap/ui/model/Co
 	 * @extends sap.ui.model.ClientModel
 	 *
 	 * @author SAP SE
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 * @public
 	 * @alias sap.ui.model.json.JSONModel
 	 */
@@ -198,9 +198,9 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/model/ClientModel', 'sap/ui/model/Co
 		}.bind(this);
 
 		var fnError = function(oParams){
-			var oError = { message : oParams.textStatus, statusCode : oParams.status, statusText : oParams.statusText, responseText : oParams.responseText};
-			jQuery.sap.log.fatal("The following problem occurred: " + oParams.textStatus, oParams.responseText + ","
-						+ oParams.status + "," + oParams.statusText);
+			var oError = { message : oParams.textStatus, statusCode : oParams.request.status, statusText : oParams.request.statusText, responseText : oParams.request.responseText};
+			jQuery.sap.log.fatal("The following problem occurred: " + oParams.textStatus, oParams.request.responseText + ","
+						+ oParams.request.status + "," + oParams.request.statusText);
 
 			this.fireRequestCompleted({url : sURL, type : sType, async : bAsync, headers: mHeaders,
 				info : "cache=" + bCache + ";bMerge=" + bMerge, infoObject: {cache : bCache, merge : bMerge}, success: false, errorobject: oError});

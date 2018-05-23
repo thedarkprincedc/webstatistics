@@ -553,11 +553,7 @@ var factory = function (signals) {
                 'OP' : {
                     //optional params - everything between `: :`
                     rgx : /:([^:]+):/g,
-                    // ##### BEGIN: MODIFIED BY SAP
-                    // the "/" after the value of parameter is consumed only when it's not
-                    // followed by another "/" (?!\\/)
-                    res : '([^\\/?]+)?(?:\\/(?!\\/))?'
-                    // ##### END: MODIFIED BY SAP
+                    res : '([^\\/?]+)?\/?'
                 }
             },
 

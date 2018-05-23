@@ -138,7 +138,6 @@
 	visible: true, // boolean
 	fieldGroupIds: [], // string[], since 1.31
 	primaryArea: sap.f.DynamicPageTitleArea.Begin, // sap.f.DynamicPageTitleArea, since 1.50
-	areaShrinkRatio: "1:1.6:1.6", // sap.f.DynamicPageTitleShrinkRatio, since 1.54
 	tooltip: undefined, // sap.ui.core.TooltipBase
 	customData: [], // sap.ui.core.CustomData
 	dependents: [], // sap.ui.core.Element, since 1.19
@@ -153,10 +152,7 @@
 	breadcrumbs: undefined, // sap.m.IBreadcrumbs, since 1.52
 	validateFieldGroup: [function (oEvent) {
 		var ${control} = oEvent.getSource();
-	}, this],
-	stateChange: [function (oEvent) {
-		var ${control} = oEvent.getSource();
-	}, this] // since 1.54
+	}, this]
 })
 ]]></jsTemplate>
 	<xmlTemplate><![CDATA[<DynamicPageTitle xmlns="sap.f"
@@ -167,9 +163,7 @@
 	visible="true"
 	fieldGroupIds=""
 	primaryArea="Begin"
-	areaShrinkRatio="1:1.6:1.6"
-	validateFieldGroup=""
-	stateChange="">
+	validateFieldGroup="">
 		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
 		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
 		<heading></heading> <!-- sap.ui.core.Control -->
@@ -196,7 +190,6 @@
 	defaultTransitionNameBeginColumn: "slide", // string
 	defaultTransitionNameMidColumn: "slide", // string
 	defaultTransitionNameEndColumn: "slide", // string
-	backgroundDesign: sap.m.BackgroundDesign.Transparent, // sap.m.BackgroundDesign, since 1.54
 	tooltip: undefined, // sap.ui.core.TooltipBase
 	customData: [], // sap.ui.core.CustomData
 	dependents: [], // sap.ui.core.Element, since 1.19
@@ -243,7 +236,6 @@
 	defaultTransitionNameBeginColumn="slide"
 	defaultTransitionNameMidColumn="slide"
 	defaultTransitionNameEndColumn="slide"
-	backgroundDesign="Transparent"
 	initialBeginColumnPage=""
 	initialMidColumnPage=""
 	initialEndColumnPage=""

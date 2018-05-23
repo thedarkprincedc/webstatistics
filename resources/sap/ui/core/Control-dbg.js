@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -53,7 +53,7 @@ sap.ui.define(['jquery.sap.global', './CustomStyleClassSupport', './Element', '.
 	 * @extends sap.ui.core.Element
 	 * @abstract
 	 * @author SAP SE
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 * @alias sap.ui.core.Control
 	 * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
 	 */
@@ -154,9 +154,9 @@ sap.ui.define(['jquery.sap.global', './CustomStyleClassSupport', './Element', '.
 	 *
 	 * The additionally cloned information contains:
 	 * <ul>
-	 * <li>browser event handlers attached with {@link #attachBrowserEvent}</li>
-	 * <li>text selection behavior</li>
-	 * <li>style classes added with {@link #addStyleClass}</li>
+	 * <li>browser event handlers attached with {@link #attachBrowserEvent}
+	 * <li>text selection behavior
+	 * <li>style classes added with {@link #addStyleClass}
 	 * </ul>
 	 *
 	 * @param {string} [sIdSuffix] a suffix to be appended to the cloned element id
@@ -591,12 +591,11 @@ sap.ui.define(['jquery.sap.global', './CustomStyleClassSupport', './Element', '.
 	 *
 	 * Subclasses of Control should override this hook to implement any necessary actions before the rendering.
 	 *
+	 * @function
+	 * @name sap.ui.core.Control.prototype.onBeforeRendering
 	 * @protected
 	 */
-	Control.prototype.onBeforeRendering = function() {
-		// Before adding any implementation, please remember that this method was first implemented in release 1.54.
-		// Therefore, many subclasses will not call this method at all.
-	};
+	//sap.ui.core.Control.prototype.onBeforeRendering = function() {};
 
 	/**
 	 * Function is called when the rendering of the control is completed.
@@ -605,12 +604,11 @@ sap.ui.define(['jquery.sap.global', './CustomStyleClassSupport', './Element', '.
 	 *
 	 * Subclasses of Control should override this hook to implement any necessary actions after the rendering.
 	 *
+	 * @function
+	 * @name sap.ui.core.Control.prototype.onAfterRendering
 	 * @protected
 	 */
-	Control.prototype.onAfterRendering = function() {
-		// Before adding any implementation, please remember that this method was first implemented in release 1.54.
-		// Therefore, many subclasses will not call this method at all.
-	};
+	//sap.ui.core.Control.prototype.onAfterRendering = function() {};
 
 	/**
 	 * Returns the DOMNode Id to be used for the "labelFor" attribute of the label.
@@ -652,7 +650,6 @@ sap.ui.define(['jquery.sap.global', './CustomStyleClassSupport', './Element', '.
 		rForbiddenTags = /^(?:area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr|tr)$/i,
 		oBusyIndicatorDelegate = {
 			onBeforeRendering: function() {
-				// deregister handler/DomRef as after rendering new handler/DomRef exists and must be registered
 				if (this.getBusy() && this.getDomRef() && !this._busyIndicatorDelayedCallId && this.getDomRef("busyIndicator")) {
 					fnHandleInteraction.call(this, false);
 				}
@@ -767,11 +764,9 @@ sap.ui.define(['jquery.sap.global', './CustomStyleClassSupport', './Element', '.
 			oBusyTabbable.focus();
 			this.bIgnoreBusyFocus = false;
 			oBusyTabbable.setAttribute("tabindex", 0);
-			oEvent.stopImmediatePropagation();
-		} else if (bTargetIsBusyIndicator && (oEvent.type === 'mousedown' || oEvent.type === 'touchstart')) {
+		} else if (bTargetIsBusyIndicator && (oEvent.type === 'mousedown' || oEvent.type === 'touchdown')) {
 			// Do not "preventDefault" to allow to focus busy indicator
 			jQuery.sap.log.debug("Local Busy Indicator click handled on busy area: " + oEvent.target.id);
-			oEvent.stopImmediatePropagation();
 		} else {
 			jQuery.sap.log.debug("Local Busy Indicator Event Suppressed: " + oEvent.type);
 			oEvent.preventDefault();
@@ -865,7 +860,7 @@ sap.ui.define(['jquery.sap.global', './CustomStyleClassSupport', './Element', '.
 	/**
 	 * Suppress interactions on all DOM elements in the busy section
 	 *
-	 * @param {boolean} bBusy New busy state
+	 * @param {Boolean} bBusy New busy state
 	 * @private
 	 */
 	function fnHandleInteraction(bBusy) {

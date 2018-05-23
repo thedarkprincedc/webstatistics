@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -19,7 +19,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'sap/ui/base/EventProv
 	 *
 	 *
 	 * @class text
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 * @private
 	 * @since 1.38
 	 * @alias HeaderAdapter
@@ -128,7 +128,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'sap/ui/base/EventProv
 			return false;
 		}
 		var oParent = oHeader.getParent();
-		return oParent && (isInstanceOf(oParent, "sap/m/Page") || isInstanceOf(oParent, "sap/m/MessagePage") || isInstanceOf(oParent, "sap/uxap/ObjectPageHeader"));
+		return oParent && (isInstanceOf(oParent, "sap/m/Page") || isInstanceOf(oParent, "sap/uxap/ObjectPageHeader"));
 	};
 
 	HeaderAdapter.prototype._detectTitle = function() {
@@ -216,7 +216,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'sap/ui/base/EventProv
 	 * Constructor for an sap.m.Fiori20Adapter.
 	 *
 	 * @class text
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 * @private
 	 * @since 1.38
 	 * @alias sap.m.Fiori20Adapter

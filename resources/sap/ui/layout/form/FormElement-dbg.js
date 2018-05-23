@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -21,7 +21,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Element', 'sap/ui/base/ManagedO
 	 * @extends sap.ui.core.Element
 	 *
 	 * @author SAP SE
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 *
 	 * @constructor
 	 * @public
@@ -66,7 +66,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Element', 'sap/ui/base/ManagedO
 			 */
 			fields : {type : "sap.ui.core.Control", multiple : true, singularName : "field"}
 		},
-		designtime: "sap/ui/layout/designtime/form/FormElement.designtime"
+		designTime : true
 	}});
 
 	FormElement.prototype.init = function(){
@@ -115,10 +115,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Element', 'sap/ui/base/ManagedO
 					oOldLabel.isDisplayOnly = oOldLabel._sapuiIsDisplayOnly;
 					oOldLabel._sapuiIsDisplayOnly = undefined;
 				}
-				if (oOldLabel.isWrapping) {
-					oOldLabel.isWrapping = oOldLabel._sapuiIsWrapping;
-					oOldLabel._sapuiIsWrapping = undefined;
-				}
 			}
 		}
 
@@ -134,9 +130,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Element', 'sap/ui/base/ManagedO
 				}
 				if (this._oLabel.isDisplayOnly) {
 					this._oLabel.isDisplayOnly = _labelIsDisplayOnly;
-				}
-				if (this._oLabel.setWrapping) {
-					this._oLabel.setWrapping(true);
 				}
 			} else {
 				this._oLabel.setText(oLabel);
@@ -154,10 +147,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Element', 'sap/ui/base/ManagedO
 			if (oLabel && oLabel.isDisplayOnly) {
 				oLabel._sapuiIsDisplayOnly = oLabel.isDisplayOnly;
 				oLabel.isDisplayOnly = _labelIsDisplayOnly;
-			}
-			if (oLabel && oLabel.isWrapping) {
-				oLabel._sapuiIsWrapping = oLabel.isWrapping;
-				oLabel.isWrapping = _labelIsWrapping;
 			}
 		}
 
@@ -422,21 +411,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Element', 'sap/ui/base/ManagedO
 		}
 
 		return false;
-
-	}
-
-	/*
-	 * overwrite Labels isWrapping function to set wrapping as default.
-	 *
-	 * If Wrapping is set explicitly on the Label, this is used.
-	 */
-	function _labelIsWrapping(){
-
-		if (this.getWrapping && !this.isPropertyInitial("wrapping")) {
-			return this.getWrapping();
-		}
-
-		return true;
 
 	}
 

@@ -1,0 +1,23 @@
+{
+  "name": "webstat",
+  "version": "1.0.0",
+  "description": "To run this example we need to run it on a web server. I use lite-server. It can be downloaded using",
+  "main": "Component.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start" : "lite-server -c ./bs-config.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedarkprincedc/webstatistics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedarkprincedc/webstatistics/issues"
+  },
+  "homepage": "https://github.com/thedarkprincedc/webstatistics#readme"
+}

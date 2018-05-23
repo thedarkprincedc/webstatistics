@@ -1,12 +1,12 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
 // Provides the concept of a sorter for list bindings
-sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object'],
-	function(jQuery, BaseObject) {
+sap.ui.define(['sap/ui/base/Object'],
+	function(BaseObject) {
 	"use strict";
 
 
@@ -19,7 +19,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object'],
 	 * This object defines the sort order for the list binding.
 	 *
 	 *
-	 * @param {string} sPath the binding path used for sorting
+	 * @param {String} sPath the binding path used for sorting
 	 * @param {boolean} [bDescending=false] whether the sort order should be descending
 	 * @param {boolean|function} [vGroup] configure grouping of the content, can either be true to enable grouping
 	 *        based on the raw model property value, or a function which calculates the group value out of the
@@ -28,8 +28,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object'],
 	 *        is provided it must either return a primitive type value as the group key or an object containing
 	 *        a "key" property and additional properties needed for group visualization.
 	 * @param {function} [fnComparator] a custom comparator function, which is used for clientside sorting instead
-	 *        of the default comparator method. Information about parameters and expected return values of such a
-	 *        method can be found in the default comparator documentation.
+	 *        of the default comparator method.
 	 * @public
 	 * @alias sap.ui.model.Sorter
 	 * @extends sap.ui.base.Object

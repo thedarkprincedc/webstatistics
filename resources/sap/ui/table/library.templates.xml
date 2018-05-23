@@ -180,7 +180,6 @@
 	rowActionTemplate: undefined, // sap.ui.table.RowAction
 	rowSettingsTemplate: undefined, // sap.ui.table.RowSettings
 	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.52
-	contextMenu: undefined, // sap.ui.core.IContextMenu, since 1.54
 	groupBy: undefined, // sap.ui.table.Column
 	ariaLabelledBy: [], // sap.ui.core.Control
 	validateFieldGroup: [function (oEvent) {
@@ -216,9 +215,6 @@
 	cellContextmenu: [function (oEvent) {
 		var ${control} = oEvent.getSource();
 	}, this], // since 1.21.0
-	beforeOpenContextMenu: [function (oEvent) {
-		var ${control} = oEvent.getSource();
-	}, this], // since 1.54
 	columnFreeze: [function (oEvent) {
 		var ${control} = oEvent.getSource();
 	}, this], // since 1.21.0
@@ -288,7 +284,6 @@
 	columnVisibility=""
 	cellClick=""
 	cellContextmenu=""
-	beforeOpenContextMenu=""
 	columnFreeze=""
 	customFilter=""
 	firstVisibleRowChanged=""
@@ -305,7 +300,6 @@
 		<rowActionTemplate></rowActionTemplate> <!-- sap.ui.table.RowAction -->
 		<rowSettingsTemplate></rowSettingsTemplate> <!-- sap.ui.table.RowSettings -->
 		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.52 -->
-		<contextMenu></contextMenu> <!-- sap.ui.core.IContextMenu, since 1.54 -->
 </AnalyticalTable>
 ]]></xmlTemplate>
 </Template>
@@ -567,7 +561,6 @@
 	rowActionTemplate: undefined, // sap.ui.table.RowAction
 	rowSettingsTemplate: undefined, // sap.ui.table.RowSettings
 	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.52
-	contextMenu: undefined, // sap.ui.core.IContextMenu, since 1.54
 	groupBy: undefined, // sap.ui.table.Column
 	ariaLabelledBy: [], // sap.ui.core.Control
 	validateFieldGroup: [function (oEvent) {
@@ -603,9 +596,6 @@
 	cellContextmenu: [function (oEvent) {
 		var ${control} = oEvent.getSource();
 	}, this], // since 1.21.0
-	beforeOpenContextMenu: [function (oEvent) {
-		var ${control} = oEvent.getSource();
-	}, this], // since 1.54
 	columnFreeze: [function (oEvent) {
 		var ${control} = oEvent.getSource();
 	}, this], // since 1.21.0
@@ -669,7 +659,6 @@
 	columnVisibility=""
 	cellClick=""
 	cellContextmenu=""
-	beforeOpenContextMenu=""
 	columnFreeze=""
 	customFilter=""
 	firstVisibleRowChanged=""
@@ -686,7 +675,6 @@
 		<rowActionTemplate></rowActionTemplate> <!-- sap.ui.table.RowAction -->
 		<rowSettingsTemplate></rowSettingsTemplate> <!-- sap.ui.table.RowSettings -->
 		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.52 -->
-		<contextMenu></contextMenu> <!-- sap.ui.core.IContextMenu, since 1.54 -->
 </Table>
 ]]></xmlTemplate>
 </Template>
@@ -745,7 +733,6 @@
 	rowActionTemplate: undefined, // sap.ui.table.RowAction
 	rowSettingsTemplate: undefined, // sap.ui.table.RowSettings
 	dragDropConfig: [], // sap.ui.core.dnd.DragDropBase, since 1.52
-	contextMenu: undefined, // sap.ui.core.IContextMenu, since 1.54
 	groupBy: undefined, // sap.ui.table.Column
 	ariaLabelledBy: [], // sap.ui.core.Control
 	validateFieldGroup: [function (oEvent) {
@@ -781,9 +768,6 @@
 	cellContextmenu: [function (oEvent) {
 		var ${control} = oEvent.getSource();
 	}, this], // since 1.21.0
-	beforeOpenContextMenu: [function (oEvent) {
-		var ${control} = oEvent.getSource();
-	}, this], // since 1.54
 	columnFreeze: [function (oEvent) {
 		var ${control} = oEvent.getSource();
 	}, this], // since 1.21.0
@@ -855,7 +839,6 @@
 	columnVisibility=""
 	cellClick=""
 	cellContextmenu=""
-	beforeOpenContextMenu=""
 	columnFreeze=""
 	customFilter=""
 	firstVisibleRowChanged=""
@@ -873,7 +856,6 @@
 		<rowActionTemplate></rowActionTemplate> <!-- sap.ui.table.RowAction -->
 		<rowSettingsTemplate></rowSettingsTemplate> <!-- sap.ui.table.RowSettings -->
 		<dragDropConfig></dragDropConfig> <!-- sap.ui.core.dnd.DragDropBase, since 1.52 -->
-		<contextMenu></contextMenu> <!-- sap.ui.core.IContextMenu, since 1.54 -->
 </TreeTable>
 ]]></xmlTemplate>
 </Template>

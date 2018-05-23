@@ -1,18 +1,12 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
 // Provides control sap.ui.unified.SplitContainer.
-sap.ui.define([
-	'jquery.sap.global',
-	'sap/ui/core/Control',
-	'sap/ui/core/theming/Parameters',
-	'./library',
-	'sap/ui/core/library',
-	"./SplitContainerRenderer"
-], function(jQuery, Control, Parameters, library, coreLibrary, SplitContainerRenderer) {
+sap.ui.define(['jquery.sap.global', 'sap/ui/core/Control', 'sap/ui/core/theming/Parameters', './library', 'sap/ui/core/library'],
+	function(jQuery, Control, Parameters, library, coreLibrary) {
 	"use strict";
 
 
@@ -33,7 +27,7 @@ sap.ui.define([
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.54.4
+	 * @version 1.52.7
 	 *
 	 * @constructor
 	 * @public

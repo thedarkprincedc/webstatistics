@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Library name="sap.ui.layout" xmlns="http://www.sap.com/ui5/ide/templates/xmlview">
+<Template name="sap.ui.layout.BlockLayout" alias="BlockLayout,Layout">
+	<jsTemplate><![CDATA[new sap.ui.layout.BlockLayout({
+	id: "${id}", // sap.ui.core.ID
+	busy: false, // boolean
+	busyIndicatorDelay: 1000, // int
+	busyIndicatorSize: sap.ui.core.BusyIndicatorSize.Medium, // sap.ui.core.BusyIndicatorSize
+	visible: true, // boolean
+	fieldGroupIds: [], // string[], since 1.31
+	background: sap.ui.layout.BlockBackgroundType.Default, // sap.ui.layout.BlockBackgroundType, since 1.42
+	tooltip: undefined, // sap.ui.core.TooltipBase
+	customData: [], // sap.ui.core.CustomData
+	dependents: [], // sap.ui.core.Element, since 1.19
+	content: [], // sap.ui.layout.BlockLayoutRow
+	validateFieldGroup: [function (oEvent) {
+		var ${control} = oEvent.getSource();
+	}, this]
+})
+]]></jsTemplate>
+	<xmlTemplate><![CDATA[<BlockLayout xmlns="sap.ui.layout"
+	id="${id}"
+	busy="false"
+	busyIndicatorDelay="1000"
+	busyIndicatorSize="Medium"
+	visible="true"
+	fieldGroupIds=""
+	background="Default"
+	validateFieldGroup="">
+		<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+		<dependents></dependents> <!-- sap.ui.core.Element, since 1.19 -->
+		<content></content> <!-- sap.ui.layout.BlockLayoutRow -->
+</BlockLayout>
+]]></xmlTemplate>
+</Template>
 <Template name="sap.ui.layout.BlockLayoutCell" alias="BlockLayoutCell,Cell">
 	<jsTemplate><![CDATA[new sap.ui.layout.BlockLayoutCell({
 	id: "${id}", // sap.ui.core.ID

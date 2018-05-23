@@ -2,7 +2,7 @@
 
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -259,8 +259,7 @@ html.sap-desktop .sapUxAPHierarchicalSelect {
 	width: 3rem;
 }
 
-.sapUiMedia-Std-Phone .sapUxAPHierarchicalSelect.sapMSltHoverable > .sapMSltArrow,
-html .sapUiContainer-Narrow .sapUxAPHierarchicalSelect.sapMSltHoverable > .sapMSltArrow {
+.sapUiMedia-Std-Phone .sapUxAPHierarchicalSelect.sapMSltHoverable > .sapMSltArrow {
 	border-left: none;
 }
 
@@ -298,7 +297,7 @@ html .sapUiContainer-Narrow .sapUxAPHierarchicalSelect.sapMSltHoverable > .sapMS
 }
 
 /* styling needed to achieve underline of the select label on phone */
-html.sapUiMedia-Std-Phone, html.sap-phone, html .sapUiContainer-Narrow {
+html.sapUiMedia-Std-Phone, html.sap-phone {
 	.sapMSltPressed > .sapMSltArrow {
 		background: @sapUiFieldActiveBackground;
 	}
@@ -396,14 +395,6 @@ html .sapUiSizeCompact .sapUiContainer-ExtraWide .sapUxAPObjectPageHeaderIdentif
 			right: 2.25rem;
 		}
 	}
-}
-
-.sapUxAPObjectPageHeaderTitleArrow .sapMBtn {
-	margin-top: -0.175rem;
-}
-
-.sapUiSizeCompact .sapUxAPObjectPageHeaderTitleArrow .sapMBtn {
-	margin-top: -0.1rem;
 }
 /* END "ObjectPageHeader.less" */
 

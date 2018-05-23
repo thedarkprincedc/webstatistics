@@ -19,9 +19,18 @@ sap.ui.define([
                 daily: "webcontent_stat_daily"
             }
             var iSelection = (!intervalMap[oInterval]) ? "webcontent_stat_daily" : intervalMap[oInterval];
-         
-            this.byId("tabledata").getBinding("items").sPath = "/" + iSelection;
-            this.byId("tabledata").getBinding("items").refresh();
+            var table = this.byId("tabledata");
+            // table.setBusy(true);
+            table.getBinding("items").sPath = "/" + iSelection;
+            table.getBinding("items").refresh();
+            // table.modelContextChange = function(){
+            //     debugger;
+            // }
+            // setTimeout(function(){
+            //     table.setBusy(false);
+            // },1000)
+            
+            //debugger;
         },
         onNavBack: function(oEvent){
             var oHistory = History.getInstance();

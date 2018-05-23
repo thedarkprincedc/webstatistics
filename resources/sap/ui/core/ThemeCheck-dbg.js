@@ -1,12 +1,12 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
 // Provides class sap.ui.core.ThemeCheck
-sap.ui.define(['jquery.sap.global', 'sap/ui/Device', 'sap/ui/base/Object', 'sap/ui/thirdparty/URI', 'jquery.sap.script'],
-	function(jQuery, Device, BaseObject, URI/* , jQuerySapScript */) {
+sap.ui.define(['jquery.sap.global', 'sap/ui/Device', 'sap/ui/Global', 'sap/ui/base/Object', 'sap/ui/thirdparty/URI', 'jquery.sap.script'],
+	function(jQuery, Device, Global, BaseObject, URI/* , jQuerySap */) {
 	"use strict";
 
 
@@ -66,7 +66,13 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/Device', 'sap/ui/base/Object', 'sap/
 			// Firefox throws a SecurityError or InvalidAccessError if "sheet.cssRules"
 			// is accessed on a stylesheet with 404 response code.
 			// Most browsers also throw when accessing from a different origin (CORS).
-			return null;
+
+			// Only rethrow if the error is different
+			if (e.name !== 'SecurityError' && e.name !== 'InvalidAccessError') {
+				throw e;
+			} else {
+				return null;
+			}
 		}
 	}
 	function hasSheetCssRules(sheet) {
@@ -80,9 +86,9 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/Device', 'sap/ui/base/Object', 'sap/
 		try {
 
 			var bNoLinkElement = false,
-				bLinkElementFinishedLoading = false,
-				bSheet = false,
-				bInnerHtml = false;
+			    bLinkElementFinishedLoading = false,
+			    bSheet = false,
+			    bInnerHtml = false;
 
 			// Check if <link> element is missing (e.g. misconfigured library)
 			bNoLinkElement = !oStyle;
