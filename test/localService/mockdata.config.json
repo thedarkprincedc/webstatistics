@@ -1,0 +1,11 @@
+{
+    "odata":{
+        "servers":[
+            {
+                "name": "WebContent Statistics",
+                "rootUri": "/data/WebContentStatistics.svc/",
+                "path": "webcontent_stat"
+            }
+        ]
+    }
+}

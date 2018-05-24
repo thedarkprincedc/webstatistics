@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "start" : "lite-server -c ./bs-config.json",
+    "start": "lite-server -c ./bs-config.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/thedarkprincedc/webstatistics/issues"
   },
-  "homepage": "https://github.com/thedarkprincedc/webstatistics#readme"
+  "homepage": "https://github.com/thedarkprincedc/webstatistics#readme",
+  "devDependencies": {
+    "excel-as-json": "^2.0.2",
+    "odata-v4-service-metadata": "^0.1.6",
+    "xml-formatter": "^1.0.1"
+  }
 }

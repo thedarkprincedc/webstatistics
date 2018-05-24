@@ -22,7 +22,7 @@ sap.ui.define([
                     lastUpdated: "10/23/2018"
                 },
             });
-         
+            
             this.getView().setModel(oModel);
         },
         calculateDailyMetrics: function(){
