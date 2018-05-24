@@ -67,6 +67,11 @@
                     "pattern": "webcontentodata/{interval}",
                     "name": "webcontentodata",
                     "target": "webcontentodata"
+                },
+                {
+                    "pattern": "webcontentjsontodata",
+                    "name": "webcontent",
+                    "target": "webcontent"
                 }
             ],
             "targets": {
@@ -81,6 +86,10 @@
                 "webcontentodata": {
                     "viewID": "webcontentodata",
                     "viewName": "Webcontentodata"
+                },
+                "webcontent" : {
+                    "viewID": "webcontent",
+                    "viewName": "Webcontent"
                 }
             }
         }

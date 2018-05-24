@@ -1,15 +1,15 @@
 sap.ui.define([
     "jquery.sap.global",
     "sap/ui/core/util/MockServer",
-    "com/dla/webstat/test/localService/servers/mockdata.odata.server"
-], function(jQuery, MockServer){
+    "com/dla/webstat/test/localService/utility/utility.functions",
+    "com/dla/webstat/test/localService/servers/mockdata.json.server"
+], function(jQuery, MockServer, Utility){
     "use strict";
     return {
         init : function(){
-            sap.ui.core.util.MockServer.startAll();
-        },
-        log: function(string){
-            console.log(string)
+            Utility.loadOdataServerConfig(null, function(data){
+                sap.ui.core.util.MockServer.startAll();
+            })
         }
     };
 });
