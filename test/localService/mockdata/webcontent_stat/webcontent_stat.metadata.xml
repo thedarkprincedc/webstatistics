@@ -1,35 +1,30 @@
-<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
-	<edmx:DataServices m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0"
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0"
 					   xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
-		<Schema Namespace="NorthwindModel" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-			<EntityType Name="WebContentStat">
-				<Key>
-					<PropertyRef Name="timestamphour"/>
-					<PropertyRef Name="aggregationlevel"/>
-					<PropertyRef Name="content"/>
+        <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="NorthwindModel">
+            <EntityType Name="WebContentStat">
+                <Key>
+                    <PropertyRef Name="timestamphour"/>
+                    <PropertyRef Name="aggregationlevel"/>
+                    <PropertyRef Name="content"/>
                     <PropertyRef Name="pcdurl"/>
-					<PropertyRef Name="objecttype"/>
-					<PropertyRef Name="visits"/>
+                    <PropertyRef Name="objecttype"/>
+                    <PropertyRef Name="visits"/>
                     <PropertyRef Name="custom"/>
                     <PropertyRef Name="id"/>
-				</Key>
-				<Property Name="timestamphour" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
-				<Property Name="aggregationlevel" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
-				<Property Name="content" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
-				<Property Name="pcdurl" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
-			    <Property Name="objecttype" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
-				<Property Name="visits"  Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
-				<Property Name="custom" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
-				<Property Name="id"  Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
+                </Key>
+                <Property Name="timestamphour" Type="Edm.String"/>
+                <Property Name="aggregationlevel" Type="Edm.String"/>
+                <Property Name="content" Type="Edm.String"/>
+                <Property Name="pcdurl" Type="Edm.String"/>
+                <Property Name="objecttype" Type="Edm.String"/>
+                <Property Name="visits" Type="Edm.String"/>
+                <Property Name="custom" Type="Edm.String"/>
+                <Property Name="id" Type="Edm.String"/>
             </EntityType>
-		</Schema>
-		<Schema Namespace="ODataWebV2.Northwind.Model" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-			<EntityContainer Name="NorthwindEntities" m:IsDefaultEntityContainer="true" p6:LazyLoadingEnabled="true"
-							 xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-				<EntitySet Name="webcontent_stat_daily" EntityType="NorthwindModel.WebContentStat"/>
-				<EntitySet Name="webcontent_stat_monthly" EntityType="NorthwindModel.WebContentStat"/>
-				<EntitySet Name="webcontent_stat_weekly" EntityType="NorthwindModel.WebContentStat"/>
-			</EntityContainer>
-		</Schema>
-	</edmx:DataServices>
+            <EntityContainer Name="NorthwindEntities">
+                <EntitySet Name="webcontent_stat_daily" EntityType="NorthwindModel.WebContentStat"/>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
 </edmx:Edmx>
